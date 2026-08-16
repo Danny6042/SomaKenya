@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SomaKenya | Learn. Practice. Achieve.</title>
+
+    <meta name="description"
+          content="SomaKenya is a modern learning platform for Kenyan students. Learn, practice, take quizzes and track your progress.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="logo">
+            <span class="logo-icon">📚</span>
+            <span>Soma<span>Kenya</span></span>
+        </div>
+
+        <nav class="nav">
+            <a href="#home">Home</a>
+            <a href="#learn">Learn</a>
+            <a href="#revision">Revision</a>
+            <a href="#quizzes">Quizzes</a>
+            <a href="#progress">Progress</a>
+        </nav>
+
+        <button class="login-btn">
+            Sign In
+        </button>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+                    🇰🇪 Built for Kenyan Learners
+                </div>
+
+                <h1>
+                    Learn smarter.<br>
+                    <span>Achieve more.</span>
+                </h1>
+
+                <p>
+                    Learn, practice, revise and track your progress
+                    with one powerful learning platform.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <button class="primary-btn" onclick="startLearning()">
+                        Start Learning →
+                    </button>
+
+                    <button class="secondary-btn" onclick="exploreCourses()">
+                        Explore Subjects
+                    </button>
+
+                </div>
+
+                <div class="hero-stats">
+
+                    <div>
+                        <strong>Primary</strong>
+                        <small>Grades 1–6</small>
+                    </div>
+
+                    <div>
+                        <strong>JSS</strong>
+                        <small>Grades 7–9</small>
+                    </div>
+
+                    <div>
+                        <strong>Secondary</strong>
+                        <small>Forms 1–4</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Learning Dashboard Preview -->
+
+            <div class="dashboard-preview">
+
+                <div class="dashboard-top">
+
+                    <div>
+                        <small>Welcome back 👋</small>
+                        <h3>Keep learning!</h3>
+                    </div>
+
+                    <div class="avatar">
+                        S
+                    </div>
+
+                </div>
+
+
+                <div class="progress-card">
+
+                    <div class="progress-title">
+                        <span>Weekly Progress</span>
+                        ><strong id="weekly-progress">0%</strong>
+                    </div>
+
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+
+                    <small><span id="progress-message">
+    Start learning to build your progress!
+</span></small>
+
+                </div>
+
+
+                <div class="subject-grid">
+
+                    <div class="subject-card">
+                        <span>🔢</span>
+                        <strong>Mathematics</strong>
+                        <small>12 topics</small>
+                    </div>
+
+                    <div class="subject-card">
+                        <span>📖</span>
+                        <strong>English</strong>
+                        <small>18 topics</small>
+                    </div>
+
+                    <div class="subject-card">
+                        <span>🔬</span>
+                        <strong>Science</strong>
+                        <small>15 topics</small>
+                    </div>
+
+                    <div class="subject-card">
+                        <span>🌍</span>
+                        <strong>Social Studies</strong>
+                        <small>10 topics</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= LEARNING LEVELS ================= -->
+
+        <section class="levels" id="learn">
+
+            <div class="section-heading">
+
+                <span>START YOUR JOURNEY</span>
+
+                <h2>
+                    Choose your learning level
+                </h2>
+
+                <p>
+                    Find lessons and resources designed for your level.
+                </p>
+
+            </div>
+
+
+            <div class="level-grid">
+
+                <div class="level-card">
+                    <div class="level-icon">🎒</div>
+                    <h3>Primary</h3>
+                    <p>Grades 1–6</p>
+                    <button onclick="openLevel('Primary')">
+                        Explore →
+                    </button>
+                </div>
+
+
+                <div class="level-card">
+                    <div class="level-icon">🎓</div>
+                    <h3>Junior Secondary</h3>
+                    <p>Grades 7–9</p>
+                    <button onclick="openLevel('Junior Secondary')">
+                        Explore →
+                    </button>
+                </div>
+
+
+                <div class="level-card">
+                    <div class="level-icon">📘</div>
+                    <h3>Secondary</h3>
+                    <p>Forms 1–4</p>
+                    <button onclick="openLevel('Secondary')">
+                        Explore →
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= LEVEL SELECTION ================= -->
+
+<section class="level-selection" id="level-selection">
+
+    <div class="section-heading">
+
+        <span>CHOOSE YOUR LEVEL</span>
+
+        <h2 id="selected-level-title">
+            Start Learning
+        </h2>
+
+        <p id="selected-level-description">
+            Choose your class or form to begin learning.
+        </p>
+
+    </div>
+
+    <div class="class-grid" id="class-grid">
+
+        <!-- Classes will be added by JavaScript -->
+
+    </div>
+
+</section>
+<!-- ================= SUBJECT SELECTION ================= -->
+
+<section class="subject-selection" id="subject-selection">
+    <!-- ================= TOPIC SELECTION ================= -->
+
+<section class="topic-selection" id="topic-selection">
+
+    <div class="section-heading">
+
+        <span id="topic-level-label">TOPICS</span>
+
+        <h2 id="selected-subject-title">
+            Choose a topic
+        </h2>
+
+        <p>
+            Select a topic to start your lesson.
+        </p>
+
+    </div>
+
+    <div class="topic-grid" id="topic-grid">
+
+        <!-- Topics generated by JavaScript -->
+
+    </div>
+
+</section>
+<!-- ================= LESSON ================= -->
+
+<section class="lesson-section" id="lesson-section">
+
+    <div class="lesson-container">
+
+        <div class="lesson-header">
+
+            <span id="lesson-breadcrumb">
+                MATHEMATICS • FRACTIONS
+            </span>
+
+            <h2 id="lesson-title">
+                Fractions
+            </h2>
+
+            <p id="lesson-introduction">
+                Learn the basics, study the examples,
+                then test your understanding.
+            </p>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <div class="lesson-icon">
+                📚
+            </div>
+
+            <h3>What is a fraction?</h3>
+
+            <p>
+                A fraction represents a part of a whole.
+                It has two main parts: the numerator and
+                the denominator.
+            </p>
+
+            <div class="fraction-example">
+
+                <div class="fraction">
+                    <span>3</span>
+                    <hr>
+                    <span>4</span>
+                </div>
+
+                <div>
+                    <strong>3/4</strong>
+
+                    <p>
+                        3 is the numerator.<br>
+                        4 is the denominator.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="lesson-card example-card">
+
+            <span class="lesson-label">
+                EXAMPLE
+            </span>
+
+            <h3>Understanding 3/4</h3>
+
+            <p>
+                Imagine a pizza divided into four equal
+                pieces. If you have three pieces, you have
+                three quarters of the pizza.
+            </p>
+
+            <div class="visual-pizza">
+                🍕
+            </div>
+
+        </div>
+
+        <div class="lesson-card">
+
+            <span class="lesson-label">
+                REMEMBER
+            </span>
+
+            <ul class="lesson-points">
+
+                <li>
+                    The numerator tells us how many parts
+                    we have.
+                </li>
+
+                <li>
+                    The denominator tells us how many equal
+                    parts make the whole.
+                </li>
+
+                <li>
+                    Both numbers are important when reading
+                    a fraction.
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="lesson-action">
+
+            <button
+                class="primary-btn"
+                onclick="startPractice()"
+            >
+                Start Practice →
+            </button>
+            <button
+    class="complete-lesson-btn"
+    onclick="completeLesson()"
+>
+    ✓ Complete Lesson
+</button>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= PRACTICE ================= -->
+
+<section class="practice-section" id="practice-section">
+
+    <div class="practice-container">
+
+        <div class="practice-header">
+
+            <span>PRACTICE</span>
+
+            <h2>Test your understanding</h2>
+
+            <p id="question-progress">
+                Question 1 of 5
+            </p>
+
+        </div>
+
+        <div class="question-card">
+
+            <h3 id="question-text">
+                What is the numerator in 3/4?
+            </h3>
+
+            <div
+                class="answer-grid"
+                id="answer-grid"
+            >
+                <!-- Answers generated by JavaScript -->
+            </div>
+
+            <div
+                class="feedback"
+                id="feedback"
+            ></div>
+
+            <button
+                class="primary-btn next-question-btn"
+                id="next-question"
+                onclick="nextQuestion()"
+            >
+                Next Question →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <div class="section-heading">
+
+        <span id="subject-level-label">LEARNING</span>
+
+        <h2 id="selected-class-title">
+            Choose a subject
+        </h2>
+
+        <p>
+            Select a subject to begin learning.
+        </p>
+
+    </div>
+
+    <div class="app-subject-grid" id="app-subject-grid">
+
+        <!-- Subjects will be generated here -->
+
+    </div>
+
+</section>
+        <!-- ================= FEATURES ================= -->
+         <!-- =====================================================
+     STUDENT DASHBOARD
+     ===================================================== -->
+
+<section
+    class="dashboard-section"
+    id="dashboard"
+>
+
+    <div class="dashboard-container">
+
+        <div class="dashboard-header">
+
+            <span class="section-label">
+                YOUR LEARNING JOURNEY
+            </span>
+
+            <h2>
+                Welcome back! 👋
+            </h2>
+
+            <p>
+                Keep learning, practicing and
+                improving every day.
+            </p>
+
+        </div>
+
+
+        <!-- PROGRESS CARDS -->
+
+        <div class="dashboard-stats">
+
+
+            <div class="dashboard-stat">
+
+                <div class="stat-icon">
+                    📊
+                </div>
+
+                <div>
+
+                    <span>
+                        Overall Progress
+                    </span>
+
+                    <strong
+                        id="dashboard-progress"
+                    >
+                        0%
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-stat">
+
+                <div class="stat-icon">
+                    🧠
+                </div>
+
+                <div>
+
+                    <span>
+                        Quiz Score
+                    </span>
+
+                    <strong
+                        id="dashboard-score"
+                    >
+                        0%
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-stat">
+
+                <div class="stat-icon">
+                    📚
+                </div>
+
+                <div>
+
+                    <span>
+                        Lessons
+                    </span>
+
+                    <strong
+                        id="dashboard-lessons"
+                    >
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-stat">
+
+                <div class="stat-icon">
+                    🔥
+                </div>
+
+                <div>
+
+                    <span>
+                        Learning Streak
+                    </span>
+
+                    <strong
+                        id="dashboard-streak"
+                    >
+                        1 day
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CONTINUE LEARNING -->
+
+        <div class="continue-learning">
+
+            <div>
+
+                <span class="section-label">
+                    CONTINUE LEARNING
+                </span>
+
+                <h3 id="continue-title">
+                    Mathematics
+                </h3>
+
+                <p id="continue-topic">
+                    Fractions
+                </p>
+
+            </div>
+
+            <button
+                class="primary-btn"
+                onclick="continueLearning()"
+            >
+                Continue →
+            </button>
+
+        </div>
+
+
+        <!-- ACHIEVEMENTS -->
+
+        <div class="achievements">
+
+            <div class="dashboard-subheading">
+
+                <span class="section-label">
+                    ACHIEVEMENTS
+                </span>
+
+                <h3>
+                    Your badges 🏆
+                </h3>
+
+            </div>
+
+
+            <div class="achievement-grid">
+
+
+                <div class="achievement-card">
+
+                    <div class="achievement-icon">
+                        🎯
+                    </div>
+
+                    <h4>
+                        First Practice
+                    </h4>
+
+                    <p>
+                        Complete your first quiz.
+                    </p>
+
+                </div>
+
+
+                <div class="achievement-card">
+
+                    <div class="achievement-icon">
+                        ⭐
+                    </div>
+
+                    <h4>
+                        Great Score
+                    </h4>
+
+                    <p>
+                        Score 80% or higher.
+                    </p>
+
+                </div>
+
+
+                <div class="achievement-card">
+
+                    <div class="achievement-icon">
+                        🔥
+                    </div>
+
+                    <h4>
+                        Keep Going
+                    </h4>
+
+                    <p>
+                        Keep your learning streak.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+        <section class="features" id="revision">
+
+            <div class="section-heading">
+
+                <span>POWERFUL TOOLS</span>
+
+                <h2>
+                    Everything you need to learn better
+                </h2>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+                <div class="feature">
+                    <span>📚</span>
+                    <h3>Interactive Lessons</h3>
+                    <p>
+                        Understand topics through structured
+                        explanations and examples.
+                    </p>
+                </div>
+
+
+                <div class="feature">
+                    <span>📝</span>
+                    <h3>Smart Revision</h3>
+                    <p>
+                        Practice questions and identify areas
+                        that need more attention.
+                    </p>
+                </div>
+
+
+                <div class="feature" id="quizzes">
+                    <span>🧠</span>
+                    <h3>Interactive Quizzes</h3>
+                    <p>
+                        Test your knowledge and receive
+                        instant results.
+                    </p>
+                </div>
+
+
+                <div class="feature" id="progress">
+                    <span>📊</span>
+                    <h3>Track Progress</h3>
+                    <p>
+                        Monitor your learning journey and
+                        celebrate your achievements.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CALL TO ACTION ================= -->
+
+        <section class="cta">
+
+            <div>
+
+                <span>YOUR LEARNING JOURNEY STARTS HERE</span>
+
+                <h2>
+                    Ready to start learning?
+                </h2>
+
+                <p>
+                    Choose your level and begin your journey with SomaKenya.
+                </p>
+
+                <button class="primary-btn" onclick="startLearning()">
+                    Start Learning →
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="logo">
+            <span class="logo-icon">📚</span>
+            Soma<span>Kenya</span>
+        </div>
+
+        <p>
+            Learn. Practice. Achieve.
+        </p>
+
+        <small>
+            © 2026 SomaKenya. All rights reserved.
+        </small>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
